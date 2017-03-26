@@ -17,5 +17,5 @@ iface wlan0 inet static
   netmask 255.255.255.0
 
 allow-hotplug wlan1
-iface wlan1 inet manuak
+iface wlan1 inet manual
   wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
