@@ -50,6 +50,10 @@ iptables -t nat -A POSTROUTING -o tun0 -j MASQUERADE
 iptables -A FORWARD -i tun0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT
 iptables -A FORWARD -i wlan0 -o tun0 -j ACCEPT
 
+iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT # Allow ESTABLISHED
+iptables -A INPUT -i wlan1 -j DROP # block incomming from wlan1
+iptables -A INPUT -i tun0 -j DROP # block incomming from VPN
+
 sh -c "iptables-save > /etc/iptables/rules.v4" # save
 
 service hostapd start
