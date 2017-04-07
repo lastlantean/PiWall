@@ -1,4 +1,17 @@
 #!/bin/bash
+
+### BEGIN INIT INFO
+# Provides:		PiWall
+# Required-Start:
+# Required-Stop:
+# Should-Start:		$network
+# Should-Stop:
+# Default-Start:	2 3 4 5
+# Default-Stop:		0 1 6
+# Short-Description:    PiWall
+# Description:		PiWall
+### END INIT INFO
+
 case $1 in
     start)
         echo "Starting PiWall."
